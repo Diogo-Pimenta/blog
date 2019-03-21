@@ -11,4 +11,8 @@
 				return $query->result_array();
 			}
 		}
+        
+         function inserir($postagem) {
+            return $this->db->insert('postagem', $postagem);
+        }
 	}
