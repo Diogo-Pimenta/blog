@@ -14,12 +14,11 @@
                 <tr>
                     <td><?= $postagem['titulo'] ?></td>
                     <td><?=anchor('postagem-visualizar/'.$postagem['id'],'Visualizar'); ?> </td>
+                    <td><?=anchor('postagem-editar/'.$postagem['id'],'Editar'); ?> </td>
+                    <td><?=anchor('postagem-excluir/'.$postagem['id'],'Excluir'); ?> </td>
                 </tr>
             <?php endforeach; ?>
 
         </tbody>
     </table>
 <?php endif; ?>
-
-
-

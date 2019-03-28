@@ -29,4 +29,23 @@
             $this->Postagem->inserir($postagem);
             redirect();
         }
+        
+        public function editar($id){
+            $parametros['titulo'] = 'Edição de Postagem';
+            $parametros['postagem'] =  $this->Postagem->get($id);
+            $this->load->view('cabecalho',$parametros);
+            $this->load->view('postagem/edicao',$parametros);
+            $this->load->view('rodape');
+        }
+        
+        public function atualizar(){
+            $postagem = $this->input->post();
+            $this->Postagem->atualizar($postagem);
+            redirect();
+        }
+        
+        public function excluir($id){
+            $this->Postagem->deletar($id);
+            redirect();
+        }
     }
